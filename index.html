@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kriti ♡</title>
+
+    <title>Kriti.exe</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -17,13 +18,12 @@
         }
 
         :root {
-            --cream: #fff8ef;
-            --pink: #e95f7c;
-            --soft-pink: #ffd5de;
-            --orange: #ef983d;
-            --yellow: #f4c65d;
-            --burgundy: #7b2940;
-            --brown: #62483f;
+            --cream: #fff7e8;
+            --pink: #ff5d8f;
+            --orange: #ff9f1c;
+            --yellow: #ffd166;
+            --red: #9f2042;
+            --brown: #4f332d;
             --white: #ffffff;
         }
 
@@ -33,11 +33,12 @@
 
         body {
             font-family: "Poppins", sans-serif;
-            color: var(--brown);
             background:
-                radial-gradient(circle at 10% 15%, rgba(244, 198, 93, 0.18), transparent 25%),
-                radial-gradient(circle at 90% 20%, rgba(233, 95, 124, 0.12), transparent 30%),
+                radial-gradient(circle at 15% 10%, rgba(255, 209, 102, .25), transparent 25%),
+                radial-gradient(circle at 90% 20%, rgba(255, 93, 143, .16), transparent 30%),
                 var(--cream);
+
+            color: var(--brown);
             overflow-x: hidden;
         }
 
@@ -45,33 +46,39 @@
             content: "";
             position: fixed;
             inset: 0;
-            pointer-events: none;
             z-index: -1;
-            opacity: 0.045;
+            pointer-events: none;
+            opacity: .05;
+
             background-image:
-                radial-gradient(circle, var(--burgundy) 2px, transparent 2px);
-            background-size: 32px 32px;
+                radial-gradient(circle, #9f2042 2px, transparent 2px);
+
+            background-size: 30px 30px;
         }
 
         nav {
             width: min(1100px, 92%);
             margin: 20px auto;
             padding: 14px 20px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(255, 255, 255, 0.72);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(233, 95, 124, 0.14);
-            border-radius: 999px;
+
+            background: rgba(255,255,255,.75);
+            backdrop-filter: blur(14px);
+
+            border: 1px solid rgba(255,93,143,.2);
+            border-radius: 100px;
+
             position: relative;
-            z-index: 20;
+            z-index: 100;
         }
 
         .logo {
-            font-family: "DM Serif Display", serif;
-            font-size: 26px;
-            color: var(--burgundy);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--red);
         }
 
         .logo span {
@@ -80,125 +87,160 @@
 
         .nav-links {
             display: flex;
-            gap: 24px;
+            gap: 22px;
         }
 
         .nav-links a {
-            color: var(--brown);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
+            color: var(--brown);
+            font-size: 13px;
+            font-weight: 600;
         }
 
         .hero {
             min-height: calc(100vh - 100px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 50px 20px 100px;
+            display: grid;
+            place-items: center;
+
+            padding: 60px 20px 100px;
             text-align: center;
+
+            position: relative;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
             position: relative;
             z-index: 5;
         }
 
-        .small-label {
+        .warning {
             display: inline-block;
+
             padding: 9px 17px;
-            margin-bottom: 22px;
+            margin-bottom: 25px;
+
             border-radius: 999px;
-            border: 1px solid rgba(233, 95, 124, 0.16);
-            background: rgba(255, 255, 255, 0.75);
-            color: var(--burgundy);
+
+            background: #fff;
+            border: 1px solid rgba(255,93,143,.25);
+
             font-size: 13px;
+            font-weight: 600;
+
+            animation: wobble 2.5s infinite;
         }
 
-        .hero h1 {
+        @keyframes wobble {
+            0%, 100% {
+                transform: rotate(-1deg);
+            }
+
+            50% {
+                transform: rotate(1deg);
+            }
+        }
+
+        h1 {
             font-family: "DM Serif Display", serif;
-            font-size: clamp(70px, 12vw, 145px);
-            line-height: 0.9;
+            font-size: clamp(65px, 12vw, 145px);
+            line-height: .88;
+
+            color: var(--red);
             letter-spacing: -4px;
-            color: var(--burgundy);
         }
 
-        .hero h1 span {
+        h1 span {
             color: var(--pink);
-            position: relative;
         }
 
-        .hero h1 span::after {
-            content: "♡";
-            position: absolute;
-            top: -4px;
-            right: -28px;
-            font-family: sans-serif;
-            font-size: 25px;
-            color: var(--orange);
-        }
-
-        .hero-text {
-            max-width: 560px;
+        .hero p {
+            max-width: 600px;
             margin: 30px auto 0;
-            line-height: 1.9;
-            color: #765d54;
+
+            line-height: 1.8;
             font-size: 16px;
         }
 
-        .cta {
-            border: 0;
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+
             margin-top: 30px;
-            padding: 15px 24px;
-            border-radius: 999px;
+        }
+
+        button {
+            border: 0;
             cursor: pointer;
+
+            padding: 14px 22px;
+            border-radius: 999px;
+
             font: inherit;
-            font-weight: 600;
+            font-weight: 700;
+
+            transition: .2s ease;
+        }
+
+        .main-button {
             color: white;
-            background: linear-gradient(135deg, var(--pink), var(--burgundy));
-            box-shadow: 0 14px 30px rgba(123, 41, 64, 0.18);
-            transition: 0.25s ease;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink),
+                    var(--red)
+                );
+
+            box-shadow: 0 12px 25px rgba(159,32,66,.18);
         }
 
-        .cta:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 18px 38px rgba(123, 41, 64, 0.24);
+        .secondary-button {
+            background: white;
+            color: var(--red);
+
+            border: 1px solid rgba(159,32,66,.15);
         }
 
-        .flower {
+        button:hover {
+            transform: translateY(-4px) rotate(-1deg);
+        }
+
+        .floating {
             position: absolute;
-            font-size: 42px;
-            animation: float 6s ease-in-out infinite;
+            font-size: 38px;
             user-select: none;
+
+            animation: float 5s ease-in-out infinite;
         }
 
         .f1 {
-            left: 9%;
+            left: 8%;
             top: 20%;
         }
 
         .f2 {
-            right: 10%;
-            top: 27%;
+            right: 8%;
+            top: 25%;
             animation-delay: -2s;
         }
 
         .f3 {
-            left: 18%;
-            bottom: 12%;
+            left: 15%;
+            bottom: 15%;
             animation-delay: -4s;
         }
 
         .f4 {
-            right: 18%;
-            bottom: 11%;
+            right: 14%;
+            bottom: 12%;
             animation-delay: -1s;
         }
 
         @keyframes float {
-            0%, 100% {
+            0%,100% {
                 transform: translateY(0) rotate(-5deg);
             }
 
@@ -207,48 +249,31 @@
             }
         }
 
-        .divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 55px;
-        }
-
-        .divider span {
-            width: 70px;
-            height: 1px;
-            background: rgba(123, 41, 64, 0.23);
-        }
-
-        .divider b {
-            color: var(--orange);
-            font-size: 22px;
-        }
-
         .section {
             width: min(1050px, 90%);
             margin: auto;
-            padding: 70px 0;
+            padding: 80px 0;
         }
 
-        .section-heading {
+        .section-title {
             text-align: center;
             margin-bottom: 45px;
         }
 
-        .section-heading small {
+        .section-title small {
             color: var(--orange);
-            text-transform: uppercase;
             letter-spacing: 3px;
-            font-weight: 600;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
-        .section-heading h2 {
-            margin-top: 8px;
-            color: var(--burgundy);
+        .section-title h2 {
+            margin-top: 5px;
+
             font-family: "DM Serif Display", serif;
             font-size: clamp(40px, 6vw, 64px);
+
+            color: var(--red);
         }
 
         .cards {
@@ -258,13 +283,17 @@
         }
 
         .card {
-            min-height: 265px;
-            padding: 30px;
+            min-height: 260px;
+            padding: 28px;
+
             border-radius: 28px;
-            border: 1px solid rgba(233, 95, 124, 0.14);
-            background: rgba(255, 255, 255, 0.7);
-            box-shadow: 0 20px 50px rgba(98, 72, 63, 0.06);
-            transition: 0.3s ease;
+
+            background: rgba(255,255,255,.78);
+            border: 1px solid rgba(255,93,143,.14);
+
+            box-shadow: 0 20px 45px rgba(79,51,45,.06);
+
+            transition: .25s ease;
         }
 
         .card:hover {
@@ -275,81 +304,97 @@
             transform: translateY(-8px) rotate(1deg);
         }
 
-        .card-icon {
+        .icon {
             width: 55px;
             height: 55px;
+
             display: grid;
             place-items: center;
+
             border-radius: 18px;
-            background: #fff0d4;
-            font-size: 27px;
-            margin-bottom: 24px;
+
+            background: #fff0d2;
+
+            font-size: 26px;
+            margin-bottom: 22px;
         }
 
         .card h3 {
             font-family: "DM Serif Display", serif;
-            color: var(--burgundy);
             font-size: 27px;
-            margin-bottom: 12px;
+            color: var(--red);
+
+            margin-bottom: 10px;
         }
 
         .card p {
             font-size: 14px;
             line-height: 1.8;
-            color: #765e55;
         }
 
-        .quote {
+        .brainrot-box {
             width: min(900px, 90%);
             margin: 70px auto;
-            padding: 70px 35px;
-            border-radius: 38px;
+            padding: 65px 35px;
+
             text-align: center;
+
             color: white;
+
+            border-radius: 38px;
+
             background:
                 linear-gradient(
                     135deg,
-                    rgba(123, 41, 64, 0.97),
-                    rgba(180, 63, 89, 0.95)
+                    #8f1738,
+                    #db4772
                 );
+
             position: relative;
             overflow: hidden;
         }
 
-        .quote::before,
-        .quote::after {
-            content: "✿";
+        .brainrot-box::before {
+            content: "😭";
             position: absolute;
-            font-size: 180px;
-            color: rgba(255, 255, 255, 0.08);
-        }
 
-        .quote::before {
+            font-size: 170px;
+
             left: -30px;
-            top: -65px;
+            top: -70px;
+
+            opacity: .08;
         }
 
-        .quote::after {
+        .brainrot-box::after {
+            content: "💀";
+            position: absolute;
+
+            font-size: 170px;
+
             right: -30px;
             bottom: -80px;
+
+            opacity: .08;
         }
 
-        .quote p {
-            position: relative;
-            z-index: 2;
-            max-width: 650px;
-            margin: auto;
+        .brainrot-box h2 {
             font-family: "DM Serif Display", serif;
-            font-size: clamp(29px, 5vw, 48px);
-            line-height: 1.3;
-        }
 
-        .quote small {
+            font-size: clamp(35px, 6vw, 58px);
+
             position: relative;
             z-index: 2;
-            display: block;
-            margin-top: 20px;
-            opacity: 0.75;
+        }
+
+        .brainrot-box p {
+            margin: 15px auto 0;
+            max-width: 600px;
+
+            line-height: 1.8;
+
+            position: relative;
+            z-index: 2;
         }
 
         .surprise {
@@ -359,62 +404,87 @@
 
         .surprise h2 {
             font-family: "DM Serif Display", serif;
-            color: var(--burgundy);
-            font-size: clamp(42px, 6vw, 58px);
+            color: var(--red);
+
+            font-size: clamp(40px, 6vw, 58px);
         }
 
-        .surprise p {
+        .surprise > p {
             margin-top: 10px;
-            color: #7b635a;
         }
 
-        #message {
-            max-width: 560px;
+        #result {
+            max-width: 580px;
             margin: 25px auto 0;
-            max-height: 0;
+
             padding: 0;
+            max-height: 0;
+
             opacity: 0;
             overflow: hidden;
-            border-radius: 24px;
+
             background: white;
+
+            border-radius: 25px;
+
             line-height: 1.9;
-            transition: all 0.5s ease;
+
+            transition: .4s ease;
         }
 
-        #message.show {
+        #result.show {
             opacity: 1;
-            max-height: 350px;
+            max-height: 400px;
             padding: 25px;
-            border: 1px solid rgba(233, 95, 124, 0.16);
+
+            border: 1px solid rgba(255,93,143,.18);
         }
 
         footer {
             padding: 35px 20px 45px;
+
             text-align: center;
-            color: #9a7e74;
+
             font-size: 13px;
+            color: #92776e;
         }
 
-        footer span {
-            color: var(--pink);
-        }
-
-        .heart {
+        .popup {
             position: fixed;
-            z-index: 999;
+
+            padding: 10px 15px;
+
+            background: white;
+
+            border: 1px solid rgba(255,93,143,.25);
+            border-radius: 14px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.12);
+
             pointer-events: none;
-            animation: pop 1.4s forwards ease-out;
+
+            animation: popup 1.5s forwards;
+
+            z-index: 999;
         }
 
-        @keyframes pop {
-            from {
-                opacity: 1;
-                transform: translateY(0) scale(0.7);
+        @keyframes popup {
+            0% {
+                transform: scale(.5) rotate(-10deg);
+                opacity: 0;
             }
 
-            to {
+            20% {
+                transform: scale(1) rotate(3deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-70px);
                 opacity: 0;
-                transform: translateY(-120px) scale(1.4) rotate(20deg);
             }
         }
 
@@ -431,21 +501,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
+            h1 {
                 letter-spacing: -2px;
             }
 
-            .flower {
-                font-size: 28px;
-                opacity: 0.75;
-            }
-
-            .f1 {
-                left: 3%;
-            }
-
-            .f2 {
-                right: 3%;
+            .floating {
+                font-size: 26px;
+                opacity: .7;
             }
         }
     </style>
@@ -453,203 +515,319 @@
 
 <body>
 
-    <nav>
-        <div class="logo">
-            Kriti<span>♡</span>
+<nav>
+    <div class="logo">
+        kriti<span>.exe</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#stats">Stats</a>
+        <a href="#brainrot">Diagnosis</a>
+        <a href="#surprise">Important</a>
+    </div>
+</nav>
+
+
+<section class="hero">
+
+    <div class="floating f1">🪷</div>
+    <div class="floating f2">😭</div>
+    <div class="floating f3">💀</div>
+    <div class="floating f4">🌺</div>
+
+    <div class="hero-content">
+
+        <div class="warning">
+            ⚠️ WARNING: Kriti detected
         </div>
 
-        <div class="nav-links">
-            <a href="#about">Kriti</a>
-            <a href="#message-section">Message</a>
-            <a href="#surprise">Surprise</a>
-        </div>
-    </nav>
+        <h1>
+            oh nah
+            <br>
+            it's <span>Kriti</span>
+        </h1>
 
-    <main>
+        <p>
+            Unfortunately you have been given your own website.
+            Nobody approved this decision.
+        </p>
 
-        <section class="hero">
+        <div class="buttons">
 
-            <div class="flower f1">🌸</div>
-            <div class="flower f2">🌼</div>
-            <div class="flower f3">🪷</div>
-            <div class="flower f4">🌺</div>
-
-            <div class="hero-content">
-
-                <div class="small-label">
-                    🪷 made for Kriti
-                </div>
-
-                <h1>
-                    Hi,
-                    <span>Kriti</span>
-                </h1>
-
-                <p class="hero-text">
-                    I made you a website because apparently that's a normal
-                    thing to do now. Anyway, hi :)
-                </p>
-
-                <button class="cta" onclick="scrollToSurprise()">
-                    Click this ♡
-                </button>
-
-            </div>
-
-        </section>
-
-        <div class="divider">
-            <span></span>
-            <b>✦</b>
-            <span></span>
-        </div>
-
-        <section class="section" id="about">
-
-            <div class="section-heading">
-                <small>this page is literally about you</small>
-                <h2>Kriti</h2>
-            </div>
-
-            <div class="cards">
-
-                <div class="card">
-                    <div class="card-icon">🪷</div>
-
-                    <h3>Your website now</h3>
-
-                    <p>
-                        Yeah. You have your own website now.
-                        Don't let it get to your head.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">✨</div>
-
-                    <h3>You're pretty cool</h3>
-
-                    <p>
-                        I mean, I probably wouldn't have made this
-                        if I didn't think you were.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">🌺</div>
-
-                    <h3>That's it really</h3>
-
-                    <p>
-                        I just wanted to make you something cute.
-                        Hopefully you actually like it.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section class="quote" id="message-section">
-
-            <p>
-                This whole page exists because of you btw.
-            </p>
-
-            <small>Kriti ♡</small>
-
-        </section>
-
-        <section class="surprise" id="surprise">
-
-            <h2>Wait, one more thing</h2>
-
-            <p>
-                You have to click it. That's the rule.
-            </p>
-
-            <button class="cta" onclick="revealMessage(event)">
-                Fine, click me
+            <button
+                class="main-button"
+                onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})"
+            >
+                investigate this creature
             </button>
 
-            <div id="message">
-                okay hi 😭
-                <br><br>
+            <button
+                class="secondary-button"
+                onclick="randomPopup(event)"
+            >
+                do NOT click
+            </button>
 
-                I didn't really know what to put here.
-                I just wanted to make something for you.
+        </div>
 
-                <br><br>
+    </div>
 
-                Hope this made you smile :)
+</section>
 
-                <br><br>
 
-                ♡
+<section class="section" id="stats">
+
+    <div class="section-title">
+        <small>official statistics</small>
+        <h2>Kriti Lore</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">
+                🗣️
             </div>
 
-        </section>
+            <h3>Yapping</h3>
 
-    </main>
+            <p>
+                Professional yapper.
+                Somehow has something to say about literally everything.
+            </p>
 
-    <footer>
-        Made for <span>Kriti ♡</span>
-    </footer>
+        </div>
 
-    <script>
-        function scrollToSurprise() {
-            document.getElementById("surprise").scrollIntoView({
-                behavior: "smooth"
-            });
-        }
 
-        function revealMessage(event) {
-            const message = document.getElementById("message");
+        <div class="card">
 
-            message.classList.add("show");
+            <div class="icon">
+                🧠
+            </div>
 
-            createHearts(event);
-        }
+            <h3>Brain Status</h3>
 
-        function createHearts(event) {
-            const symbols = [
-                "♡",
-                "🌸",
-                "🪷",
-                "✨",
-                "💗",
-                "🌼"
-            ];
+            <p>
+                Approximately 3% functioning normally.
+                The remaining 97% is brainrot and questionable thoughts.
+            </p>
 
-            for (let i = 0; i < 18; i++) {
-                const heart = document.createElement("div");
+        </div>
 
-                heart.className = "heart";
 
-                heart.innerText =
-                    symbols[Math.floor(Math.random() * symbols.length)];
+        <div class="card">
 
-                heart.style.left =
-                    event.clientX +
-                    (Math.random() * 140 - 70) +
-                    "px";
+            <div class="icon">
+                🤨
+            </div>
 
-                heart.style.top =
-                    event.clientY +
-                    (Math.random() * 40 - 20) +
-                    "px";
+            <h3>Dih Department</h3>
 
-                heart.style.fontSize =
-                    15 + Math.random() * 20 + "px";
+            <p>
+                No comment.
+                She already knows what she did.
+            </p>
 
-                document.body.appendChild(heart);
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="brainrot-box" id="brainrot">
+
+    <h2>
+        Official Diagnosis
+    </h2>
+
+    <p>
+        Severe brainrot.
+        Chronic yapping.
+        Random laughing.
+        Horrendous humour.
+        Unhealthy dih appreciation.
+        Somehow still functioning.
+    </p>
+
+</section>
+
+
+<section class="surprise" id="surprise">
+
+    <h2>
+        important question
+    </h2>
+
+    <p>
+        Kriti, please answer honestly.
+    </p>
+
+    <button
+        class="main-button"
+        onclick="revealResult(event)"
+    >
+        reveal diagnosis
+    </button>
+
+    <div id="result">
+
+        <strong style="color:#ff5d8f;">
+            RESULTS ARE IN
+        </strong>
+
+        <br><br>
+
+        You are unfortunately still Kriti.
+
+        <br><br>
+
+        Brainrot level:
+        <strong>CRITICAL</strong>
+
+        <br>
+
+        Dih thoughts:
+        <strong>CONCERNING</strong>
+
+        <br>
+
+        Yapping:
+        <strong>UNLIMITED</strong>
+
+        <br><br>
+
+        Treatment:
+        none available 😭
+
+    </div>
+
+</section>
+
+
+<footer>
+    made for Kriti because unfortunately she exists ♡
+</footer>
+
+
+<script>
+
+    const popupTexts = [
+        "dih mentioned 🤨",
+        "Kriti behave",
+        "GET OUT 😭",
+        "brainrot detected",
+        "bro clicked it 💀",
+        "Kriti moment",
+        "absolutely shameless",
+        "seek help immediately",
+        "professional yapper",
+        "🤨🤨🤨"
+    ];
+
+
+    function randomPopup(event) {
+
+        for (let i = 0; i < 6; i++) {
+
+            setTimeout(() => {
+
+                const popup =
+                    document.createElement("div");
+
+                popup.className =
+                    "popup";
+
+                popup.innerText =
+                    popupTexts[
+                        Math.floor(
+                            Math.random() *
+                            popupTexts.length
+                        )
+                    ];
+
+                popup.style.left =
+                    Math.random() *
+                    (window.innerWidth - 170)
+                    + "px";
+
+                popup.style.top =
+                    Math.random() *
+                    (window.innerHeight - 80)
+                    + "px";
+
+                document.body.appendChild(popup);
 
                 setTimeout(() => {
-                    heart.remove();
+                    popup.remove();
                 }, 1500);
-            }
+
+            }, i * 120);
+
         }
-    </script>
+
+    }
+
+
+    function revealResult(event) {
+
+        document
+            .getElementById("result")
+            .classList
+            .add("show");
+
+        const texts = [
+            "😭",
+            "💀",
+            "DIH",
+            "🤨",
+            "HELP",
+            "KRITI",
+            "brainrot"
+        ];
+
+        for (let i = 0; i < 18; i++) {
+
+            setTimeout(() => {
+
+                const popup =
+                    document.createElement("div");
+
+                popup.className =
+                    "popup";
+
+                popup.innerText =
+                    texts[
+                        Math.floor(
+                            Math.random() *
+                            texts.length
+                        )
+                    ];
+
+                popup.style.left =
+                    Math.random() *
+                    (window.innerWidth - 100)
+                    + "px";
+
+                popup.style.top =
+                    Math.random() *
+                    (window.innerHeight - 80)
+                    + "px";
+
+                document.body.appendChild(popup);
+
+                setTimeout(() => {
+                    popup.remove();
+                }, 1500);
+
+            }, i * 70);
+
+        }
+
+    }
+
+</script>
 
 </body>
 </html>
