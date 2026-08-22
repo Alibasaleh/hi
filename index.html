@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Krito ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #fff8ec;
+            --pink: #e85d75;
+            --soft-pink: #ffc9d2;
+            --orange: #ef8c32;
+            --yellow: #f7c75c;
+            --burgundy: #7f253b;
+            --brown: #5c3b32;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(247, 199, 92, .18), transparent 25%),
+                radial-gradient(circle at 90% 20%, rgba(232, 93, 117, .14), transparent 30%),
+                var(--cream);
+
+            color: var(--brown);
+            overflow-x: hidden;
+        }
+
+        /* Indian-inspired background pattern */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: .05;
+            z-index: -1;
+
+            background-image:
+                radial-gradient(circle, var(--burgundy) 2px, transparent 2px);
+
+            background-size: 32px 32px;
+        }
+
+        nav {
+            width: min(1100px, 92%);
+            margin: 20px auto;
+            padding: 14px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(255, 255, 255, .66);
+            backdrop-filter: blur(15px);
+
+            border: 1px solid rgba(232, 93, 117, .15);
+            border-radius: 100px;
+
+            position: relative;
+            z-index: 20;
+        }
+
+        .logo {
+            font-family: "DM Serif Display", serif;
+            font-size: 25px;
+            color: var(--burgundy);
+        }
+
+        .logo span {
+            color: var(--pink);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--brown);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .hero {
+            min-height: calc(100vh - 100px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 60px 20px 100px;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .little-label {
+            display: inline-block;
+
+            padding: 9px 18px;
+            margin-bottom: 22px;
+
+            background: rgba(255, 255, 255, .75);
+            border: 1px solid rgba(232, 93, 117, .2);
+            border-radius: 50px;
+
+            color: var(--burgundy);
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(65px, 12vw, 140px);
+            line-height: .9;
+
+            color: var(--burgundy);
+            letter-spacing: -4px;
+        }
+
+        .hero h1 span {
+            color: var(--pink);
+            position: relative;
+        }
+
+        .hero h1 span::after {
+            content: "♡";
+            position: absolute;
+            font-family: sans-serif;
+            font-size: 24px;
+            top: -5px;
+            right: -25px;
+            color: var(--orange);
+        }
+
+        .hero-text {
+            max-width: 580px;
+            margin: 30px auto 0;
+            line-height: 1.9;
+            font-size: 16px;
+            color: #72584f;
+        }
+
+        .cta {
+            border: none;
+            margin-top: 30px;
+            padding: 15px 25px;
+
+            font-family: inherit;
+            font-weight: 600;
+
+            color: white;
+            background: linear-gradient(135deg, var(--pink), var(--burgundy));
+
+            border-radius: 50px;
+            cursor: pointer;
+
+            box-shadow: 0 13px 30px rgba(127, 37, 59, .18);
+
+            transition: .25s ease;
+        }
+
+        .cta:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 18px 35px rgba(127, 37, 59, .25);
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 40px;
+            animation: float 6s ease-in-out infinite;
+            user-select: none;
+        }
+
+        .f1 {
+            left: 10%;
+            top: 20%;
+        }
+
+        .f2 {
+            right: 12%;
+            top: 27%;
+            animation-delay: -2s;
+        }
+
+        .f3 {
+            left: 20%;
+            bottom: 12%;
+            animation-delay: -4s;
+        }
+
+        .f4 {
+            right: 20%;
+            bottom: 10%;
+            animation-delay: -1s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(7deg);
+            }
+        }
+
+        .divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+
+        .divider span {
+            display: block;
+            width: 70px;
+            height: 1px;
+            background: rgba(127, 37, 59, .25);
+        }
+
+        .divider b {
+            color: var(--orange);
+            font-size: 22px;
+        }
+
+        .section {
+            width: min(1050px, 90%);
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading small {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .section-heading h2 {
+            margin-top: 8px;
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(40px, 6vw, 65px);
+            color: var(--burgundy);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            min-height: 270px;
+            padding: 30px;
+
+            background: rgba(255, 255, 255, .68);
+            border: 1px solid rgba(232, 93, 117, .14);
+            border-radius: 28px;
+
+            box-shadow: 0 20px 50px rgba(91, 59, 50, .06);
+
+            transition: .3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) rotate(-1deg);
+        }
+
+        .card:nth-child(2):hover {
+            transform: translateY(-8px) rotate(1deg);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+
+            display: grid;
+            place-items: center;
+
+            background: #fff0d4;
+            border-radius: 18px;
+
+            font-size: 27px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            font-family: "DM Serif Display", serif;
+            color: var(--burgundy);
+            font-size: 27px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #765c52;
+        }
+
+        .quote {
+            width: min(900px, 90%);
+            margin: 70px auto;
+            padding: 70px 35px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(127, 37, 59, .97),
+                    rgba(180, 58, 81, .94)
+                );
+
+            color: white;
+
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote::before,
+        .quote::after {
+            content: "✿";
+            position: absolute;
+            color: rgba(255, 255, 255, .1);
+            font-size: 180px;
+        }
+
+        .quote::before {
+            left: -30px;
+            top: -60px;
+        }
+
+        .quote::after {
+            right: -30px;
+            bottom: -80px;
+        }
+
+        .quote p {
+            max-width: 650px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(28px, 5vw, 47px);
+            line-height: 1.3;
+        }
+
+        .quote small {
+            display: block;
+            margin-top: 22px;
+            opacity: .75;
+            font-size: 13px;
+        }
+
+        .surprise-section {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .surprise-section h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: 55px;
+            color: var(--burgundy);
+        }
+
+        .surprise-section p {
+            margin-top: 10px;
+            color: #7b6259;
+        }
+
+        #message {
+            max-width: 560px;
+            margin: 25px auto 0;
+
+            padding: 0;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+
+            background: white;
+            border-radius: 25px;
+            line-height: 1.8;
+
+            transition: all .5s ease;
+        }
+
+        #message.show {
+            opacity: 1;
+            max-height: 300px;
+            padding: 25px;
+            border: 1px solid rgba(232, 93, 117, .18);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px 45px;
+            color: #9a7d72;
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--pink);
+        }
+
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+
+            animation: heartAnimation 1.4s forwards ease-out;
+        }
+
+        @keyframes heartAnimation {
+            from {
+                opacity: 1;
+                transform: translateY(0) scale(.7);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(-120px) scale(1.4) rotate(20deg);
+            }
+        }
+
+        @media (max-width: 750px) {
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .flower {
+                font-size: 28px;
+                opacity: .7;
+            }
+
+            .f1 {
+                left: 4%;
+            }
+
+            .f2 {
+                right: 4%;
+            }
+
+            .surprise-section h2 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            Krito<span>♡</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#about">About Her</a>
+            <a href="#little-things">Little Things</a>
+            <a href="#surprise">Surprise</a>
+        </div>
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="flower f1">🌸</div>
+            <div class="flower f2">🌼</div>
+            <div class="flower f3">🪷</div>
+            <div class="flower f4">🌺</div>
+
+            <div class="hero-content">
+
+                <div class="little-label">
+                    🪷 A tiny corner of the internet for someone special
+                </div>
+
+                <h1>
+                    Hey,
+                    <span>Krito</span>
+                </h1>
+
+                <p class="hero-text">
+                    Some people simply make the world feel a little prettier
+                    just by being in it. This little page is inspired by warm
+                    colours, flowers, late sunsets, Indian charm, and most
+                    importantly — you.
+                </p>
+
+                <button class="cta" onclick="scrollToSurprise()">
+                    Open something cute ♡
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <div class="divider">
+            <span></span>
+            <b>✦</b>
+            <span></span>
+        </div>
+
+
+        <section class="section" id="about">
+
+            <div class="section-heading">
+                <small>For Krito</small>
+                <h2>A Little About You</h2>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-icon">🪷</div>
+
+                    <h3>Beautiful Energy</h3>
+
+                    <p>
+                        The kind of person whose presence can make an ordinary
+                        moment feel a little more colourful, warm and memorable.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">✨</div>
+
+                    <h3>Your Spark</h3>
+
+                    <p>
+                        There is something special about people who can be
+                        completely themselves. That little spark is impossible
+                        to copy.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">🌺</div>
+
+                    <h3>Simply Krito</h3>
+
+                    <p>
+                        No complicated description needed. Just Krito —
+                        one of one, slightly chaotic, hopefully always smiling,
+                        and definitely deserving of her own website.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="quote" id="little-things">
+
+            <p>
+                “May your days be as colourful as rangoli,
+                as warm as chai, and as beautiful as a sky
+                filled with evening lights.”
+            </p>
+
+            <small>
+                made especially for Krito ♡
+            </small>
+
+        </section>
+
+
+        <section class="surprise-section" id="surprise">
+
+            <h2>One more thing… 🌷</h2>
+
+            <p>
+                You didn't think I'd make a whole website without a surprise,
+                did you?
+            </p>
+
+            <button class="cta" onclick="revealMessage(event)">
+                Click me ♡
+            </button>
+
+            <div id="message">
+                <strong style="color:#e85d75;">
+                    Dear Krito,
+                </strong>
+
+                <br><br>
+
+                Just a tiny reminder that you deserve beautiful days,
+                genuine smiles, peaceful nights, good food, endless laughs,
+                and people who appreciate you exactly as you are.
+
+                <br><br>
+
+                Keep being you. 🪷✨
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Made with <span>♥</span> for Krito
+        &nbsp;•&nbsp;
+        somewhere between chai & chaos
+    </footer>
+
+
+    <script>
+        function scrollToSurprise() {
+            document
+                .getElementById("surprise")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+        }
+
+
+        function revealMessage(event) {
+            const message = document.getElementById("message");
+
+            message.classList.add("show");
+
+            createHearts(event);
+        }
+
+
+        function createHearts(event) {
+
+            const symbols = [
+                "♡",
+                "🌸",
+                "🪷",
+                "✨",
+                "💗",
+                "🌼"
+            ];
+
+            for (let i = 0; i < 16; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.className = "heart";
+
+                heart.innerText =
+                    symbols[
+                        Math.floor(
+                            Math.random() * symbols.length
+                        )
+                    ];
+
+                heart.style.left =
+                    event.clientX +
+                    (Math.random() * 120 - 60) +
+                    "px";
+
+                heart.style.top =
+                    event.clientY +
+                    (Math.random() * 30 - 15) +
+                    "px";
+
+                heart.style.fontSize =
+                    15 + Math.random() * 18 + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1500);
+            }
+        }
+    </script>
+
+</body>
+</html>
