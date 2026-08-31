@@ -3,831 +3,399 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Kriti.exe</title>
+    <meta name="theme-color" content="#f9efe2">
+    <meta name="description" content="Kriti's extremely serious official website. Mostly yapping.">
+    <title>Kriti — certified yapper</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --cream: #fff7e8;
-            --pink: #ff5d8f;
-            --orange: #ff9f1c;
-            --yellow: #ffd166;
-            --red: #9f2042;
-            --brown: #4f332d;
-            --white: #ffffff;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Poppins", sans-serif;
-            background:
-                radial-gradient(circle at 15% 10%, rgba(255, 209, 102, .25), transparent 25%),
-                radial-gradient(circle at 90% 20%, rgba(255, 93, 143, .16), transparent 30%),
-                var(--cream);
-
-            color: var(--brown);
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-            opacity: .05;
-
-            background-image:
-                radial-gradient(circle, #9f2042 2px, transparent 2px);
-
-            background-size: 30px 30px;
-        }
-
-        nav {
-            width: min(1100px, 92%);
-            margin: 20px auto;
-            padding: 14px 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            background: rgba(255,255,255,.75);
-            backdrop-filter: blur(14px);
-
-            border: 1px solid rgba(255,93,143,.2);
-            border-radius: 100px;
-
-            position: relative;
-            z-index: 100;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 20px;
-            color: var(--red);
-        }
-
-        .logo span {
-            color: var(--pink);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 22px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--brown);
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .hero {
-            min-height: calc(100vh - 100px);
-            display: grid;
-            place-items: center;
-
-            padding: 60px 20px 100px;
-            text-align: center;
-
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .warning {
-            display: inline-block;
-
-            padding: 9px 17px;
-            margin-bottom: 25px;
-
-            border-radius: 999px;
-
-            background: #fff;
-            border: 1px solid rgba(255,93,143,.25);
-
-            font-size: 13px;
-            font-weight: 600;
-
-            animation: wobble 2.5s infinite;
-        }
-
-        @keyframes wobble {
-            0%, 100% {
-                transform: rotate(-1deg);
-            }
-
-            50% {
-                transform: rotate(1deg);
-            }
-        }
-
-        h1 {
-            font-family: "DM Serif Display", serif;
-            font-size: clamp(65px, 12vw, 145px);
-            line-height: .88;
-
-            color: var(--red);
-            letter-spacing: -4px;
-        }
-
-        h1 span {
-            color: var(--pink);
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin: 30px auto 0;
-
-            line-height: 1.8;
-            font-size: 16px;
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-
-            margin-top: 30px;
-        }
-
-        button {
-            border: 0;
-            cursor: pointer;
-
-            padding: 14px 22px;
-            border-radius: 999px;
-
-            font: inherit;
-            font-weight: 700;
-
-            transition: .2s ease;
-        }
-
-        .main-button {
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--pink),
-                    var(--red)
-                );
-
-            box-shadow: 0 12px 25px rgba(159,32,66,.18);
-        }
-
-        .secondary-button {
-            background: white;
-            color: var(--red);
-
-            border: 1px solid rgba(159,32,66,.15);
-        }
-
-        button:hover {
-            transform: translateY(-4px) rotate(-1deg);
-        }
-
-        .floating {
-            position: absolute;
-            font-size: 38px;
-            user-select: none;
-
-            animation: float 5s ease-in-out infinite;
-        }
-
-        .f1 {
-            left: 8%;
-            top: 20%;
-        }
-
-        .f2 {
-            right: 8%;
-            top: 25%;
-            animation-delay: -2s;
-        }
-
-        .f3 {
-            left: 15%;
-            bottom: 15%;
-            animation-delay: -4s;
-        }
-
-        .f4 {
-            right: 14%;
-            bottom: 12%;
-            animation-delay: -1s;
-        }
-
-        @keyframes float {
-            0%,100% {
-                transform: translateY(0) rotate(-5deg);
-            }
-
-            50% {
-                transform: translateY(-18px) rotate(7deg);
-            }
-        }
-
-        .section {
-            width: min(1050px, 90%);
-            margin: auto;
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title small {
-            color: var(--orange);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .section-title h2 {
-            margin-top: 5px;
-
-            font-family: "DM Serif Display", serif;
-            font-size: clamp(40px, 6vw, 64px);
-
-            color: var(--red);
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .card {
-            min-height: 260px;
-            padding: 28px;
-
-            border-radius: 28px;
-
-            background: rgba(255,255,255,.78);
-            border: 1px solid rgba(255,93,143,.14);
-
-            box-shadow: 0 20px 45px rgba(79,51,45,.06);
-
-            transition: .25s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-8px) rotate(-1deg);
-        }
-
-        .card:nth-child(2):hover {
-            transform: translateY(-8px) rotate(1deg);
-        }
-
-        .icon {
-            width: 55px;
-            height: 55px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 18px;
-
-            background: #fff0d2;
-
-            font-size: 26px;
-            margin-bottom: 22px;
-        }
-
-        .card h3 {
-            font-family: "DM Serif Display", serif;
-            font-size: 27px;
-            color: var(--red);
-
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .brainrot-box {
-            width: min(900px, 90%);
-            margin: 70px auto;
-            padding: 65px 35px;
-
-            text-align: center;
-
-            color: white;
-
-            border-radius: 38px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #8f1738,
-                    #db4772
-                );
-
-            position: relative;
-            overflow: hidden;
-        }
-
-        .brainrot-box::before {
-            content: "😭";
-            position: absolute;
-
-            font-size: 170px;
-
-            left: -30px;
-            top: -70px;
-
-            opacity: .08;
-        }
-
-        .brainrot-box::after {
-            content: "💀";
-            position: absolute;
-
-            font-size: 170px;
-
-            right: -30px;
-            bottom: -80px;
-
-            opacity: .08;
-        }
-
-        .brainrot-box h2 {
-            font-family: "DM Serif Display", serif;
-
-            font-size: clamp(35px, 6vw, 58px);
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .brainrot-box p {
-            margin: 15px auto 0;
-            max-width: 600px;
-
-            line-height: 1.8;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .surprise {
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .surprise h2 {
-            font-family: "DM Serif Display", serif;
-            color: var(--red);
-
-            font-size: clamp(40px, 6vw, 58px);
-        }
-
-        .surprise > p {
-            margin-top: 10px;
-        }
-
-        #result {
-            max-width: 580px;
-            margin: 25px auto 0;
-
-            padding: 0;
-            max-height: 0;
-
-            opacity: 0;
-            overflow: hidden;
-
-            background: white;
-
-            border-radius: 25px;
-
-            line-height: 1.9;
-
-            transition: .4s ease;
-        }
-
-        #result.show {
-            opacity: 1;
-            max-height: 400px;
-            padding: 25px;
-
-            border: 1px solid rgba(255,93,143,.18);
-        }
-
-        footer {
-            padding: 35px 20px 45px;
-
-            text-align: center;
-
-            font-size: 13px;
-            color: #92776e;
-        }
-
-        .popup {
-            position: fixed;
-
-            padding: 10px 15px;
-
-            background: white;
-
-            border: 1px solid rgba(255,93,143,.25);
-            border-radius: 14px;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            box-shadow: 0 10px 30px rgba(0,0,0,.12);
-
-            pointer-events: none;
-
-            animation: popup 1.5s forwards;
-
-            z-index: 999;
-        }
-
-        @keyframes popup {
-            0% {
-                transform: scale(.5) rotate(-10deg);
-                opacity: 0;
-            }
-
-            20% {
-                transform: scale(1) rotate(3deg);
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-70px);
-                opacity: 0;
-            }
-        }
-
-        @media (max-width: 750px) {
-            .nav-links {
-                display: none;
-            }
-
-            nav {
-                justify-content: center;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                letter-spacing: -2px;
-            }
-
-            .floating {
-                font-size: 26px;
-                opacity: .7;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gochi+Hand&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-flower" id="cursorFlower" aria-hidden="true">🌼</div>
 
-<nav>
-    <div class="logo">
-        kriti<span>.exe</span>
-    </div>
+    <div class="floating-decor decor-a" aria-hidden="true">✦</div>
+    <div class="floating-decor decor-b" aria-hidden="true">♡</div>
+    <div class="floating-decor decor-c" aria-hidden="true">❋</div>
+    <div class="floating-decor decor-d" aria-hidden="true">✿</div>
 
-    <div class="nav-links">
-        <a href="#stats">Stats</a>
-        <a href="#brainrot">Diagnosis</a>
-        <a href="#surprise">Important</a>
-    </div>
-</nav>
+    <header class="site-header" id="siteHeader">
+        <a class="mini-logo" href="#home" aria-label="Back to Kriti home">
+            <span class="mini-flower">❁</span>
+            kriti
+        </a>
 
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span>
+        </button>
 
-<section class="hero">
+        <nav class="nav" id="nav">
+            <a href="#home">Kriti</a>
+            <a href="#lore">Lore</a>
+            <a href="#yap-zone">Yap Zone</a>
+            <a href="#brainrot">Brainrot</a>
+            <a href="#dih">Dih Department</a>
+        </nav>
+    </header>
 
-    <div class="floating f1">🪷</div>
-    <div class="floating f2">😭</div>
-    <div class="floating f3">💀</div>
-    <div class="floating f4">🌺</div>
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-pattern" aria-hidden="true"></div>
 
-    <div class="hero-content">
+            <div class="hero-copy reveal">
+                <div class="tiny-note note-left">very important person btw ↘</div>
+                <p class="eyebrow"><span>✿</span> official kriti headquarters <span>✿</span></p>
 
-        <div class="warning">
-            ⚠️ WARNING: Kriti detected
-        </div>
+                <div class="name-wrap">
+                    <span class="name-doodle doodle-1" aria-hidden="true">✧</span>
+                    <span class="name-doodle doodle-2" aria-hidden="true">♡</span>
+                    <span class="name-doodle doodle-3" aria-hidden="true">🌼</span>
+                    <h1 id="kritiName" tabindex="0">Kriti</h1>
+                    <svg class="name-swoop" viewBox="0 0 320 42" aria-hidden="true">
+                        <path d="M8 24 C80 2, 180 45, 310 13" />
+                    </svg>
+                </div>
 
-        <h1>
-            oh nah
-            <br>
-            it's <span>Kriti</span>
-        </h1>
+                <p class="hero-tagline">
+                    certified yapper <span>•</span> professional brainrot consumer <span>•</span> dih enthusiast
+                </p>
 
-        <p>
-            Unfortunately you have been given your own website.
-            Nobody approved this decision.
-        </p>
+                <div class="status-row">
+                    <span class="status-dot"></span>
+                    <span id="randomStatus">currently yapping...</span>
+                </div>
 
-        <div class="buttons">
-
-            <button
-                class="main-button"
-                onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})"
-            >
-                investigate this creature
-            </button>
-
-            <button
-                class="secondary-button"
-                onclick="randomPopup(event)"
-            >
-                do NOT click
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section" id="stats">
-
-    <div class="section-title">
-        <small>official statistics</small>
-        <h2>Kriti Lore</h2>
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="icon">
-                🗣️
+                <a href="#lore" class="scrap-button">
+                    enter kriti's world
+                    <span>→</span>
+                </a>
             </div>
 
-            <h3>Yapping</h3>
+            <div class="hero-scrap reveal" aria-hidden="true">
+                <div class="photo-frame">
+                    <div class="photo-fill photo-real">
+                        <img src="kriti-photo.png" alt="Kriti" class="kriti-photo">
+                        <span class="big-flower">✿</span>
+                        <span class="little-star star-one">✦</span>
+                        <span class="little-star star-two">✦</span>
+                    </div>
+                    <div class="tape tape-top"></div>
+                    <p>proof she was here ♡</p>
+                </div>
 
-            <p>
-                Professional yapper.
-                Somehow has something to say about literally everything.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                🧠
+                <div class="rangoli-mini">
+                    <span></span><span></span><span></span><span></span>
+                    <i></i>
+                </div>
             </div>
 
-            <h3>Brain Status</h3>
+            <div class="scroll-note">scroll before she starts another story ↓</div>
+        </section>
 
-            <p>
-                Approximately 3% functioning normally.
-                The remaining 97% is brainrot and questionable thoughts.
-            </p>
+        <section class="marquee-strip" aria-hidden="true">
+            <div class="marquee-track">
+                <span>YAP YAP YAP ✿</span>
+                <span>wait listen ♡</span>
+                <span>completely unrelated but...</span>
+                <span>DIH DEPARTMENT OPEN</span>
+                <span>long story short (lie)</span>
+                <span>YAP YAP YAP ✿</span>
+                <span>wait listen ♡</span>
+                <span>completely unrelated but...</span>
+                <span>DIH DEPARTMENT OPEN</span>
+                <span>long story short (lie)</span>
+            </div>
+        </section>
 
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                🤨
+        <section class="section lore-section" id="lore">
+            <div class="section-heading reveal">
+                <span class="heading-kicker">page 01 / classified information</span>
+                <h2>Kriti Lore</h2>
+                <p>a totally reliable collection of facts, allegations and things she probably said at 2am.</p>
             </div>
 
-            <h3>Dih Department</h3>
+            <div class="lore-board reveal">
+                <article class="lore-card tilt-a">
+                    <span class="pin">✦</span>
+                    <small>Nationality</small>
+                    <strong>🇮🇳 Indian</strong>
+                    <p>yes the lore is international.</p>
+                </article>
 
-            <p>
-                No comment.
-                She already knows what she did.
-            </p>
+                <article class="lore-card tilt-b saffron-card">
+                    <span class="pin">♡</span>
+                    <small>Occupation</small>
+                    <strong>Professional Yapper</strong>
+                    <p>full time. overtime. no lunch break.</p>
+                </article>
 
-        </div>
+                <article class="lore-card tilt-c">
+                    <span class="pin">✿</span>
+                    <small>Special ability</small>
+                    <strong>1 story → 7 stories</strong>
+                    <p>the plot has left the building.</p>
+                </article>
 
+                <article class="lore-card tilt-d maroon-card">
+                    <span class="pin">✧</span>
+                    <small>Weakness</small>
+                    <strong>Dih</strong>
+                    <p>extremely unfortunate. anyway.</p>
+                </article>
+
+                <article class="lore-card tilt-e">
+                    <span class="pin">❋</span>
+                    <small>Current mental state</small>
+                    <strong>"wait wait wait let me explain"</strong>
+                    <p>you will be here for a while.</p>
+                </article>
+
+                <article class="lore-card tilt-f pink-card">
+                    <span class="pin">★</span>
+                    <small>Screen time</small>
+                    <strong>We don't discuss that.</strong>
+                    <p>classified by several governments.</p>
+                </article>
+
+                <div class="hand-note note-lore">some facts may be spiritually true rather than legally true ↗</div>
+            </div>
+        </section>
+
+        <section class="section yap-section" id="yap-zone">
+            <div class="section-heading reveal light-heading">
+                <span class="heading-kicker">page 02 / audio levels unsafe</span>
+                <h2>The Yap Zone 🎀</h2>
+                <p>the numbers were reviewed by nobody and somehow still feel accurate.</p>
+            </div>
+
+            <div class="yap-dashboard reveal">
+                <div class="stats-grid">
+                    <article class="stat paper-stat">
+                        <span>Yap sessions today</span>
+                        <strong class="count-up" data-value="17">17</strong>
+                        <small>and it's not even bedtime</small>
+                    </article>
+                    <article class="stat paper-stat alt">
+                        <span>Average story length</span>
+                        <strong>43<em> min</em></strong>
+                        <small>"quick story btw"</small>
+                    </article>
+                    <article class="stat paper-stat">
+                        <span>Times she said “wait listen”</span>
+                        <strong class="count-up" data-value="28">28</strong>
+                        <small>minimum estimate</small>
+                    </article>
+                    <article class="stat paper-stat alt">
+                        <span>Stories that stayed on topic</span>
+                        <strong>2</strong>
+                        <small>historic achievement</small>
+                    </article>
+                </div>
+
+                <div class="meter-card">
+                    <div class="meter-top">
+                        <div>
+                            <span class="meter-label">LIVE YAP METER</span>
+                            <strong>CRITICAL</strong>
+                        </div>
+                        <div class="danger-sticker">PLEASE<br>BREATHE</div>
+                    </div>
+
+                    <div class="meter-shell">
+                        <div class="meter-fill"></div>
+                        <div class="meter-needle"></div>
+                    </div>
+
+                    <div class="meter-scale">
+                        <span>quiet</span>
+                        <span>talking</span>
+                        <span>yapping</span>
+                        <span>unstoppable</span>
+                        <span>PLEASE BREATHE</span>
+                    </div>
+
+                    <p class="meter-caption">device cannot be calibrated lower. researchers gave up.</p>
+                </div>
+            </div>
+
+            <div class="yap-warning" id="yapWarning">you're STILL listening??</div>
+        </section>
+
+        <section class="section conversation-section" id="conversation">
+            <div class="conversation-copy reveal">
+                <span class="heading-kicker">live demonstration</span>
+                <h2>Experience a Kriti Conversation</h2>
+                <p>You have voluntarily entered the yap radius. There is still time to leave.</p>
+
+                <button class="chat-start" id="chatStart">
+                    start conversation
+                    <span>↗</span>
+                </button>
+
+                <p class="small-print">* no refunds once lore begins</p>
+            </div>
+
+            <div class="phone-wrap reveal">
+                <div class="phone">
+                    <div class="phone-bar">
+                        <div class="contact-avatar">K</div>
+                        <div>
+                            <strong>Kriti</strong>
+                            <span id="chatOnline">online • typing probably</span>
+                        </div>
+                        <span class="phone-heart">♡</span>
+                    </div>
+
+                    <div class="chat-window" id="chatWindow">
+                        <div class="date-pill">today, unfortunately</div>
+                        <div class="message kriti-message intro-message">hi</div>
+                        <div class="message visitor-message">hi</div>
+                        <div class="message kriti-message intro-message">WAIT</div>
+                    </div>
+
+                    <div class="fake-input">
+                        <span>you cannot stop her...</span>
+                        <button aria-label="Fake send button">↑</button>
+                    </div>
+                </div>
+                <div class="phone-note">live footage ↑</div>
+            </div>
+        </section>
+
+        <section class="section brainrot-section" id="brainrot">
+            <div class="section-heading reveal">
+                <span class="heading-kicker">page 03 / evidence locker</span>
+                <h2>Brainrot Archive</h2>
+                <p>important cultural documents recovered from the Kriti cinematic universe.</p>
+            </div>
+
+            <div class="brainrot-grid reveal" id="brainrotGrid">
+                <article class="brain-card card-yellow">
+                    <span class="archive-no">#001</span>
+                    <small>Thought of the day</small>
+                    <p>what if dih had wifi</p>
+                    <span class="scribble">asking the big questions</span>
+                </article>
+
+                <article class="brain-card card-pink">
+                    <span class="archive-no">#002</span>
+                    <small>Important announcement</small>
+                    <p>she's yapping again</p>
+                    <span class="scribble">shocking development</span>
+                </article>
+
+                <article class="brain-card card-cream tall-card">
+                    <span class="archive-no">#003</span>
+                    <small>Breaking news</small>
+                    <p>Kriti said “long story short.”</p>
+                    <strong>It was not short.</strong>
+                    <span class="scribble">we checked</span>
+                </article>
+
+                <article class="brain-card card-red">
+                    <span class="archive-no">#004</span>
+                    <small>Emergency memo</small>
+                    <p>"WAIT THAT REMINDS ME"</p>
+                    <span class="scribble">the original topic is now missing</span>
+                </article>
+
+                <article class="brain-card card-flower">
+                    <span class="archive-no">#005</span>
+                    <small>Kriti economics</small>
+                    <p>5 minute story = 37 actual minutes</p>
+                    <span class="scribble">inflation is crazy</span>
+                </article>
+
+                <article class="brain-card card-maroon">
+                    <span class="archive-no">#006</span>
+                    <small>System status</small>
+                    <p>brain loading... please do not refresh her</p>
+                    <span class="scribble">might make it worse</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section translator-section">
+            <div class="translator-card reveal">
+                <div class="translator-stamp">KRITI<br>TRANSLATOR</div>
+
+                <div class="translator-copy">
+                    <span class="heading-kicker">translation services / mostly accurate</span>
+                    <h2>What Kriti Says</h2>
+                    <blockquote id="kritiSays">“wait lemme tell you something quickly”</blockquote>
+
+                    <div class="translation-arrow">↓</div>
+
+                    <h3>What She Means</h3>
+                    <p id="kritiMeans">“Cancel your plans for the next 45 minutes.”</p>
+
+                    <button id="translateNext" class="translator-next">translate another one →</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dih-section" id="dih">
+            <div class="dih-ornament" aria-hidden="true">
+                <span>✦</span><span>❋</span><span>✦</span>
+            </div>
+
+            <div class="dih-inner reveal">
+                <div class="dih-title">
+                    <span class="heading-kicker">page 04 / highly funded research division</span>
+                    <h2>The Dih Department</h2>
+                    <p>no further questions at this time.</p>
+                </div>
+
+                <div class="dih-data">
+                    <div class="dih-row">
+                        <span>Dih Appreciation Level</span>
+                        <strong>100%</strong>
+                    </div>
+                    <div class="block-meter" aria-label="Dih appreciation 100 percent">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+
+                    <div class="dih-row days-row">
+                        <span>Days without mentioning dih</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+                <button class="danger-button" id="dangerButton">
+                    <span class="button-main">DO NOT PRESS</span>
+                    <span class="button-sub">seriously. very dangerous.</span>
+                </button>
+
+                <div class="approval" id="approval">Kriti approved 👍</div>
+            </div>
+        </section>
+
+        <section class="section survive-section" id="survive">
+            <div class="survive-box reveal">
+                <span class="tiny-crown">♛</span>
+                <p>you made it through the lore, the yapping and the dih department.</p>
+                <strong>somehow.</strong>
+            </div>
+        </section>
+    </main>
+
+    <button class="mystery-button" id="mysteryButton" aria-label="Mysterious random button">???</button>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="achievement" id="achievement">
+        <span>🏆 achievement unlocked</span>
+        <strong>survived Kriti</strong>
     </div>
 
-</section>
+    <footer>
+        <div class="footer-flower">✿</div>
+        <p>made with questionable amounts of brainrot ♡</p>
+        <small>Kriti™ — yapping since birth</small>
+    </footer>
 
-
-<section class="brainrot-box" id="brainrot">
-
-    <h2>
-        Official Diagnosis
-    </h2>
-
-    <p>
-        Severe brainrot.
-        Chronic yapping.
-        Random laughing.
-        Horrendous humour.
-        Unhealthy dih appreciation.
-        Somehow still functioning.
-    </p>
-
-</section>
-
-
-<section class="surprise" id="surprise">
-
-    <h2>
-        important question
-    </h2>
-
-    <p>
-        Kriti, please answer honestly.
-    </p>
-
-    <button
-        class="main-button"
-        onclick="revealResult(event)"
-    >
-        reveal diagnosis
-    </button>
-
-    <div id="result">
-
-        <strong style="color:#ff5d8f;">
-            RESULTS ARE IN
-        </strong>
-
-        <br><br>
-
-        You are unfortunately still Kriti.
-
-        <br><br>
-
-        Brainrot level:
-        <strong>CRITICAL</strong>
-
-        <br>
-
-        Dih thoughts:
-        <strong>CONCERNING</strong>
-
-        <br>
-
-        Yapping:
-        <strong>UNLIMITED</strong>
-
-        <br><br>
-
-        Treatment:
-        none available 😭
-
-    </div>
-
-</section>
-
-
-<footer>
-    made for Kriti because unfortunately she exists ♡
-</footer>
-
-
-<script>
-
-    const popupTexts = [
-        "dih mentioned 🤨",
-        "Kriti behave",
-        "GET OUT 😭",
-        "brainrot detected",
-        "bro clicked it 💀",
-        "Kriti moment",
-        "absolutely shameless",
-        "seek help immediately",
-        "professional yapper",
-        "🤨🤨🤨"
-    ];
-
-
-    function randomPopup(event) {
-
-        for (let i = 0; i < 6; i++) {
-
-            setTimeout(() => {
-
-                const popup =
-                    document.createElement("div");
-
-                popup.className =
-                    "popup";
-
-                popup.innerText =
-                    popupTexts[
-                        Math.floor(
-                            Math.random() *
-                            popupTexts.length
-                        )
-                    ];
-
-                popup.style.left =
-                    Math.random() *
-                    (window.innerWidth - 170)
-                    + "px";
-
-                popup.style.top =
-                    Math.random() *
-                    (window.innerHeight - 80)
-                    + "px";
-
-                document.body.appendChild(popup);
-
-                setTimeout(() => {
-                    popup.remove();
-                }, 1500);
-
-            }, i * 120);
-
-        }
-
-    }
-
-
-    function revealResult(event) {
-
-        document
-            .getElementById("result")
-            .classList
-            .add("show");
-
-        const texts = [
-            "😭",
-            "💀",
-            "DIH",
-            "🤨",
-            "HELP",
-            "KRITI",
-            "brainrot"
-        ];
-
-        for (let i = 0; i < 18; i++) {
-
-            setTimeout(() => {
-
-                const popup =
-                    document.createElement("div");
-
-                popup.className =
-                    "popup";
-
-                popup.innerText =
-                    texts[
-                        Math.floor(
-                            Math.random() *
-                            texts.length
-                        )
-                    ];
-
-                popup.style.left =
-                    Math.random() *
-                    (window.innerWidth - 100)
-                    + "px";
-
-                popup.style.top =
-                    Math.random() *
-                    (window.innerHeight - 80)
-                    + "px";
-
-                document.body.appendChild(popup);
-
-                setTimeout(() => {
-                    popup.remove();
-                }, 1500);
-
-            }, i * 70);
-
-        }
-
-    }
-
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
