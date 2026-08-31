@@ -372,28 +372,6 @@ button {
         #efd3c5;
 }
 
-
-.kriti-photo {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 42%;
-    z-index: 1;
-}
-
-.photo-real::before,
-.photo-real::after {
-    display: none;
-}
-
-.photo-real .big-flower,
-.photo-real .little-star {
-    z-index: 3;
-    text-shadow: 0 2px 8px rgba(65,46,42,.25);
-}
-
 .photo-fill::before,
 .photo-fill::after {
     content: "";
@@ -1665,7 +1643,31 @@ body.flower-cursor .cursor-flower {
     }
 
     .hero-scrap {
-        display: none;
+        display: grid;
+        margin-top: -18px;
+    }
+
+    .photo-frame {
+        width: min(300px, 82vw);
+        transform: rotate(3deg);
+    }
+
+    .photo-fill {
+        aspect-ratio: 0.9;
+    }
+
+    .photo-fill img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 35%;
+        display: block;
+    }
+
+    .rangoli-mini {
+        right: -8px;
+        bottom: -34px;
+        transform: scale(.82);
     }
 
     .scroll-note {
@@ -1716,6 +1718,29 @@ body.flower-cursor .cursor-flower {
 }
 
 @media (max-width: 620px) {
+    .hero-scrap {
+        width: 100%;
+        margin-top: -30px;
+    }
+
+    .photo-frame {
+        width: min(278px, 84vw);
+        padding: 14px 14px 22px;
+    }
+
+    .photo-frame p {
+        margin-top: 13px;
+        font-size: 1.05rem;
+    }
+
+    .rangoli-mini {
+        width: 92px;
+        height: 92px;
+        right: 2px;
+        bottom: -28px;
+    }
+
+
     .section {
         padding: 95px 20px;
     }
@@ -1895,5 +1920,74 @@ body.flower-cursor .cursor-flower {
         animation-duration: .001ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .001ms !important;
+    }
+}
+
+/* Real photo treatment — keep Kriti's original portrait proportions intact */
+.photo-fill.photo-real {
+    aspect-ratio: auto;
+    display: block;
+    overflow: hidden;
+    background: #eadfce;
+}
+
+.photo-fill.photo-real::before,
+.photo-fill.photo-real::after {
+    display: none;
+}
+
+.kriti-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (max-width: 900px) {
+    .photo-fill.photo-real {
+        aspect-ratio: auto;
+    }
+
+    .photo-fill.photo-real .kriti-photo {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+@media (max-width: 620px) {
+    .hero {
+        gap: 58px;
+    }
+
+    .hero-scrap {
+        width: auto;
+        margin-top: -8px;
+    }
+
+    .photo-frame {
+        width: min(310px, 86vw);
+        padding: 12px 12px 20px;
+        transform: rotate(2deg);
+    }
+
+    .photo-fill.photo-real .big-flower {
+        left: 12px;
+        bottom: 10px;
+        font-size: 3.2rem;
+        opacity: .92;
+    }
+
+    .photo-fill.photo-real .star-one {
+        right: 15px;
+        top: 18px;
+    }
+
+    .photo-fill.photo-real .star-two {
+        right: 42px;
+        top: 50px;
     }
 }
